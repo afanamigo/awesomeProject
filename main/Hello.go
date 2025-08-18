@@ -5,7 +5,8 @@ import "fmt"
 var maxNum = 9
 
 func main() {
-	var s = "Hello World, Hello Golang! --insider main"
+
+	s := "Hello World, Hello Golang! --insider main"
 	fmt.Println(s)
 	fmt.Println()
 
