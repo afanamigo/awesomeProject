@@ -2,10 +2,21 @@ package main
 
 import "fmt"
 
-// go project is based on package(src folder level)
-// save as java but grace and much more easy, didn't force to use folder package level(folder is package in java)
-// running with cli: go run filename.go or go build, then run the executable file.
-// in this case is, go run Hello.go, Or go build Hello.go, ./Hello
+var maxNum = 9
+
 func main() {
-	fmt.Println("Hello World, Hello Golang! --insider main")
+	var s = "Hello World, Hello Golang! --insider main"
+	fmt.Println(s)
+	fmt.Println()
+
+	fmt.Println("Counting From 0 ~ 9")
+	for i := 0; i <= maxNum; i++ {
+		fmt.Print(i)
+		if i < maxNum {
+			fmt.Print(",")
+		}
+	}
+
+	fmt.Println()
+	fmt.Println("Counting End.")
 }
