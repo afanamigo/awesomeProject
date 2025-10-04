@@ -39,6 +39,7 @@ func main() {
 	str := "str is string"
 	fmt.Println(str)
 
+	// 字符类型
 	// 20013
 	var _str = '中'
 	fmt.Println(_str)
@@ -47,7 +48,21 @@ func main() {
 	fmt.Println()
 	fmt.Println(string(_str))
 
-	// 字符类型
+	// len函数，查看实际占用的存储空间，底层字节数组长度
+	var _chars = "字符串"
+	len := len(_chars)
+	fmt.Println(len)
+
+	for i := 0; i < len; i++ {
+		// 16进制格式化
+		fmt.Printf("%X", _chars[i])
+		//字节数组元素
+		fmt.Println(_chars[i])
+	}
+
+	// rune （int32）
+
+	// byte （uint8）
 
 	var _ bool
 
