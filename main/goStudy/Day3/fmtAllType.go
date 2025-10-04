@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/big"
 	"reflect"
+	"unicode/utf8"
 )
 
 func main() {
@@ -57,7 +58,13 @@ func main() {
 		// 16进制格式化
 		fmt.Printf("%X", _chars[i])
 		//字节数组元素
-		fmt.Println(_chars[i])
+		//fmt.Println(_chars[i])
+	}
+
+	fmt.Println()
+	fmt.Println("_chars字符串的长度为：", utf8.RuneCountInString(_chars))
+	for _, z := range _chars {
+		fmt.Printf("%T, %X\n", z, z)
 	}
 
 	// rune （int32）
@@ -100,4 +107,27 @@ func main() {
 	g := 3.15
 	result := big.NewFloat(f).Cmp(big.NewFloat(g))
 	fmt.Println(result)
+
+	// 数组，Go中数组大小固定，生命时必须指定大小
+	arr := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(arr)
+	fmt.Println(reflect.TypeOf(arr))
+	arr2 := [7]int{1, 2, 3, 4, 5, 6, 7}
+	fmt.Println(arr2)
+	fmt.Println(reflect.TypeOf(arr2))
+	// Go中没有隐式类型转换，所以类型 [5]int 和 [7]int 不一样
+
+	// 通过下标改变数组元素的值
+	arr2[6] = 5
+	fmt.Println(arr2)
+
+	// 不像java有自上而下的类型转换和继承关系
+	// 继承虽然便利，但是带来了复杂的类型层次，也导致了语言和系统设计的复杂性
+	// 复杂的继承和类型绑定转换也会增加运行时性能开销
+	// 所以让我们忘掉什么背景语言（尤其是狗屎java。），从go重新开始
+
+	// to do 补充
+	// 字符和字符串以及unicode、utf-8、ASCII码
+	// 可变大小的数组：Slice 切片
+
 }
